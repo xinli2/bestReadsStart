@@ -1,0 +1,74 @@
+/*
+  CSC 337 BestReads. You should not need to modify this file. If you do,
+  empty your cache from your web browser and use Chrome's Incognito
+  window. If you do not, changes to this css file will not be downloaded
+  and you will see no change in the styling.
+*/
+
+body {
+	background-color: #fefcf4;
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	margin: 0px;
+}
+
+.onebook {
+	background-color: #f4f1eb;
+	border-radius: 5px;
+	box-shadow: 0 0 15px gray;
+	float: left;
+	margin: 2.5%;
+	padding: 10px;
+	width: 150px;
+	height: 220px; 
+}
+
+.onereview {
+	background-color: #f4f1eb;
+	border-radius: 5px;
+	box-shadow: 0 0 15px gray;
+	float: left;
+	margin: 5%;
+	padding: 10px;
+	width: 1100px;
+	height: 300px;
+}
+
+img {
+	height: 230px;
+	width: 150px;
+	float: left;
+}
+
+.thedetails {
+	padding: 10px;
+	margin: 10px;
+	float: left;
+    width: 900px;
+	height: 300px; 
+}
+
+.back {
+	border: #974455 solid 2px;
+	bottom: 5px;
+	color: #974455;
+	font-size: 18pt;
+	right: 10%;
+	padding: 3px;
+	position: absolute;
+}
+
+.header {
+	background-image: url("./images/books.jpeg");
+	box-shadow: 0 5px 5px lightgray;
+	height: 104px;
+	position: relative;
+}
+
+.header > div {
+	bottom: 0px;
+	color: #939384;
+	font-family: Tahoma, sans-serif;
+	font-size: 36pt;
+	position: absolute;
+	left: 10%;
+}

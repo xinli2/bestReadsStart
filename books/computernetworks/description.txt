@@ -1,0 +1,1 @@
+For courses in computer networking or introductions to networking at both the undergraduate and graduate level in computer science, engineering, CIS, MIS, and business departments. In this revision, the author takes a structured approach to explaining how networks function.

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<!-- CSC 337: Assignment BestReads 2 -->
+<!-- Author: Xin Li -->
+<head>
+<link rel="stylesheet" type="text/css" href="bestreads.css" />
+<title>Best Reads</title>
+</head>
+<body onload="showAllCovers()">
+
+	<div class="header">
+		<div>
+			<span>bestreads</span>
+		</div>
+		<span class="back" onclick="showAllCovers()">home</span>
+	</div>
+
+
+	<div id="show"></div>
+
+	<script>
+    function showAllCovers() {
+    	document.getElementById("show").innerHTML = "";
+        var ajax = new XMLHttpRequest();
+        ajax.open("GET", "bestreads.php?book=home", true);
+        ajax.send();
+        ajax.onreadystatechange = function () {
+            if (ajax.readyState == 4 && ajax.status == 200) {
+            	var array = JSON.parse(ajax.responseText);
+                for (var i in array) {
+                    document.getElementById("show").innerHTML += 
+                    	"<div class='onebook'><img src='" + array[i] + 
+        				"/cover.jpg' id='" + array[i] +
+        				"' onClick='showBook(this)'></div>";
+                }
+
+            }
+        }
+    }
+    
+    function showBook(name) {
+    	param = name.id;
+    	var ajax = new XMLHttpRequest();
+    	ajax.open("GET", "bestreads.php?book=" + param, true);
+    	ajax.send();
+    	ajax.onreadystatechange = function() {
+    		if (ajax.readyState == 4 && ajax.status == 200) {
+    			var book = JSON.parse(ajax.responseText);
+    			console.log(book);
+    			document.getElementById("show").innerHTML = "<div class='onereview'><img src='" 
+    				+ book[0] + "'><div class='thedetails'> <b>" 
+    				+ book[1] + "</b><br>" + book[2] + "<br><br>" + book[3] + "<br><br><b>" 
+    				+ book[4] + "</b><br>" + book[5] + "</div></div>";
+    		}
+    	}
+    }
+</script>
+
+</body>
+</html>
